@@ -1,0 +1,130 @@
+
+
+PostgreSQL Setup
+
+Step 1: Install PostgreSQL
+PostgreSQL is a database required by SonarQube to store all its data such as project details, issues, and metrics. This step ensures that PostgreSQL is installed on the Ubuntu system.
+
+Step 2: Enable PostgreSQL at Boot
+This step makes sure that the PostgreSQL database server starts automatically whenever the system boots, so SonarQube can always connect to the database.
+
+Step 3: Start PostgreSQL Service
+Here, the PostgreSQL service is started so that it is actively running and ready to accept database connections.
+
+Step 4: Log in as PostgreSQL Admin User
+This step switches into the PostgreSQL console using the default admin user so database roles and databases can be created.
+
+Step 5: Create a PostgreSQL Role for SonarQube
+A new database user is created specifically for SonarQube. This improves security by separating SonarQube access from other database users.
+
+Step 6: Create SonarQube Database
+A separate database is created for SonarQube to store all its analysis results and configuration data.
+
+Step 7: Grant Database Privileges
+This step gives the SonarQube database user full permissions on the SonarQube database so it can read and write data without issues.
+
+Step 8: Grant Schema Permissions
+Here, access is granted to the database schema to ensure SonarQube can manage tables and objects inside the database.
+
+Step 9: Exit PostgreSQL Console
+This step exits the PostgreSQL environment after completing all database configurations.
+
+⸻
+
+Install SonarQube
+
+Step 1: Update Package Index
+The system’s package list is updated to ensure the latest versions of software packages are available before installation.
+
+Step 2: Install Java Development Kit
+SonarQube runs on Java, so this step installs the required Java runtime environment.
+
+Step 3: Install Unzip Utility
+Unzip is needed to extract the downloaded SonarQube archive file.
+
+Step 4: Verify Java Installation
+This step checks whether Java is installed correctly and confirms the version.
+
+Step 5: Extract SonarQube Files
+The downloaded SonarQube archive is extracted so its files can be accessed and configured.
+
+Step 6: Move SonarQube to System Directory
+SonarQube files are moved to a standard system directory so they are properly organized and accessible system-wide.
+
+Step 7: Create SonarQube System User
+A dedicated system user is created for SonarQube to run securely without login access.
+
+Step 8: Set Directory Permissions
+Ownership of the SonarQube directory is assigned to the SonarQube user so it can manage its own files.
+
+⸻
+
+Install SonarScanner CLI
+
+Step 1: Download SonarScanner CLI
+SonarScanner is required to analyze source code and send results to SonarQube. This step downloads the scanner tool.
+
+Step 2: Extract Scanner Files
+The downloaded scanner archive is extracted so it can be configured and used.
+
+Step 3: Move Scanner to System Directory
+The scanner files are moved to a common system directory for easier access.
+
+Step 4: Edit Scanner Configuration
+This step configures the scanner to connect to the local SonarQube server.
+
+Step 5: Make Scanner Executable
+Execution permission is given so the scanner can be run as a command.
+
+Step 6: Enable System-wide Scanner Command
+The scanner is linked to a system path so it can be executed from anywhere in the terminal.
+
+Step 7: Verify Scanner Installation
+This step checks whether SonarScanner is installed correctly and displays version details.
+
+⸻
+
+Configure SonarQube
+
+Step 1: Open SonarQube Configuration File
+The main configuration file is opened to define database and server settings.
+
+Step 2: Configure Database and Server Settings
+This step connects SonarQube to the PostgreSQL database and sets web server options like host and port.
+
+Step 3: Update System Kernel Limits
+System limits are increased to allow SonarQube to handle large projects efficiently.
+
+Step 4: Increase User Resource Limits
+This step ensures SonarQube has enough file descriptors and processes to run smoothly.
+
+Step 5: Configure Firewall Rules
+Firewall settings are updated to allow access to the SonarQube web interface and secure SSH access.
+
+Step 6: Reload Firewall Rules
+Firewall changes are applied so the new rules take effect.
+
+Step 7: Verify Firewall Status
+This step checks whether only the required ports are open.
+
+⸻
+
+Set Up SonarQube as a System Service
+
+Step 1: Create SonarQube Service File
+A system service file is created so SonarQube can be managed like other system services.
+
+Step 2: Define Service Configuration
+Service settings are added to control how SonarQube starts, stops, restarts, and uses system resources.
+
+Step 3: Enable SonarQube at Boot
+This ensures SonarQube starts automatically whenever the system boots.
+
+Step 4: Start SonarQube Service
+The SonarQube service is started using the system service manager.
+
+Step 5: Check Service Status
+This step verifies that SonarQube is running correctly without errors.
+
+Final Step: Reboot the System
+The system is rebooted to ensure all configurations and services load properly.
